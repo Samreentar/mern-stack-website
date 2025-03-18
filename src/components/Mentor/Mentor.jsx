@@ -4,25 +4,25 @@ import React from "react";
 const mentors = [
   {
     id: 1,
-    name: "Mr. Ali Khan",
+    name: "Wishma Noor ",
     specialization: "C++ Specialist",
-    imageSrc: "/assets/mentor/", // Ensure this file exists
+    imageSrc: "/assets/mentor/Wishma.jpeg", // Ensure this file exists
     description:
       "A skilled mentor with deep expertise in C++ programming, focusing on efficient system design and algorithm optimization.",
   },
   {
     id: 2,
-    name: "Mr. Toqeer Ahmed",
+    name: "Samreen Tariq",
     specialization: "Python Specialist",
-    imageSrc: "/assets/mentor/", // Ensure this file exists
+    imageSrc: "/assets/mentor/Samreen.jpeg", // Ensure this file exists
     description:
       "An expert in Python programming, with a strong background in data science, AI, and scripting solutions.",
   },
   {
     id: 3,
-    name: "Mr. Ahmed Raza",
+    name: "Maira Nawaz",
     specialization: "Java Specialist",
-    imageSrc: "/assets/mentor/", // Ensure this file exists
+    imageSrc: "/assets/mentor/Maira.jpeg", // Ensure this file exists
     description:
       "An experienced Java developer specializing in building robust and scalable enterprise applications.",
   },
@@ -32,7 +32,8 @@ const Mentor = () => {
   return (
     <div
       id="mentors-section"
-      className="mx-auto max-w-7xl py-16 px-4 sm:px-6 lg:px-8 bg-gray-50"
+      className="w-full py-16 px-4 sm:px-6 lg:px-8"
+      style={{ backgroundColor: "#F5EFFF" }} // Set background color to #F5EFFF
     >
       <div className="text-center mb-12">
         <h2 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">
@@ -47,17 +48,21 @@ const Mentor = () => {
         {mentors.map((mentor) => (
           <div
             key={mentor.id}
-            className="group bg-white border rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
+            className="group bg-white border-2 border-black rounded-lg overflow-hidden hover:shadow-xl hover:shadow-[#611F69] hover:border-[#611F69] transition-all duration-500"
+            style={{
+              backgroundColor: "transparent", // Transparent background
+              padding: "12px", // Reduced padding inside the card
+            }}
           >
             {/* Adjusted Image Styling */}
-            <div className="relative" style={{ height: "200px" }}>
+            <div className="relative" style={{ height: "250px", marginBottom: "12px" }}>
               <img
                 src={mentor.imageSrc}
                 alt={mentor.name}
-                className="h-full w-full object-contain group-hover:scale-105 transition-transform duration-300"
+                className="h-full w-full object-contain group-hover:scale-105 transition-transform duration-500"
               />
             </div>
-            <div className="p-6 text-center">
+            <div className="p-4 text-center"> {/* Reduced padding here */}
               <h3 className="text-2xl font-bold text-gray-800">{mentor.name}</h3>
               <p className="text-md text-blue-500 font-medium mt-2">
                 {mentor.specialization}
