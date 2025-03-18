@@ -1,4 +1,5 @@
 "use client";
+
 import Slider from "react-slick";
 import React, { useState, useEffect } from "react";
 
