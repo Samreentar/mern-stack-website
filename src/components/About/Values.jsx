@@ -2,77 +2,99 @@ import React from "react";
 
 const Values = () => {
   return (
-    <div className="h-full min-h-screen w-full bg-gray-800 pt-12 p-4">
-      <div className="text-center mb-12">
-        <h2 className="text-3xl font-bold  mb-2">
-          Core Values that Drive Our Brand Forward
+    <div className="h-full min-h-screen w-full bg-gray-800 pt-12 px-6">
+      {/* Header Section */}
+      <div className="text-center mb-16">
+        <h2 className="text-4xl font-extrabold text-white mb-4">
+          Core Values That Drive <span className="text-purple-500">Our Brand</span>
         </h2>
-        <p className="text-lg text-gray-300">
-          Our values serve as a guiding force for the company’s actions,
-          decisions, and interactions.
+      </div>
+
+      {/* Bold and Prominent Text Above Cards */}
+      <div className="text-center mb-16">
+        <p
+          style={{
+            fontSize: "2rem", // Larger font size
+            fontWeight: "800", // Extra bold
+            color: "black", // Black color for the text
+            textTransform: "uppercase", // Uppercase for prominence
+            letterSpacing: "0.1em", // Increased letter spacing for clarity
+            lineHeight: "1.3", // Spacing between lines for readability
+          }}
+        >
+          Our values drive decisions, culture, and commitment to all.
         </p>
       </div>
 
-      <div className="grid gap-14 mx-12 p-5 md:grid-cols-3 md:gap-5 space-y-8 bg-lightpink mb-10">
-        <div className="rounded-xl mt-8 bg-white p-6 text-center shadow-xl">
-          <div className="mx-auto flex h-16 w-16 -translate-y-12 transform items-center justify-center rounded-full bg-teal-400 shadow-lg shadow-teal-500/40">
-            <span className="text-white text-3xl">🌳</span>
+      {/* Values Cards Section */}
+      <div className="grid gap-12 md:grid-cols-3 max-w-7xl mx-auto">
+        {/* Value 1 */}
+        <div className="rounded-xl bg-[#611F69] p-8 text-center shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-[0_8px_24px_rgba(97,31,105,0.6)]">
+          <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-white shadow-lg shadow-white/40">
+            <span className="text-[#611F69] text-3xl">📈</span> {/* Growth Icon */}
           </div>
-          <h3 className="text-darken mb-3 text-xl font-medium lg:px-14">
+          <h3 className="text-xl font-semibold text-white mt-6">
             Client Value
           </h3>
-          <p className="px-4 text-gray-500">
-            We strive to exceed our clients expectations and deliver measurable
-            results that positively impact their business.
+          <p className="text-white mt-3">
+            We strive to exceed expectations and deliver measurable results
+            that positively impact our clients' businesses.
           </p>
         </div>
-        <div className="rounded-xl bg-white p-6 text-center shadow-xl">
-          <div className="mx-auto flex h-16 w-16 -translate-y-12 transform items-center justify-center rounded-full shadow-lg bg-rose-500 shadow-rose-500/40">
-            <span className="text-white text-3xl">💧</span>
+
+        {/* Value 2 */}
+        <div className="rounded-xl bg-[#611F69] p-8 text-center shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-[0_8px_24px_rgba(97,31,105,0.6)]">
+          <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-white shadow-lg shadow-white/40">
+            <span className="text-[#611F69] text-3xl">🤝</span> {/* People Icon */}
           </div>
-          <h3 className="text-darken mb-3 text-xl font-medium lg:px-14">
+          <h3 className="text-xl font-semibold text-white mt-6">
             People Driven
           </h3>
-          <p className="px-4 text-gray-500">
-            As a people-driven company, we prioritize the needs and well-being
-            of our employees, customers, and communities.
+          <p className="text-white mt-3">
+            We prioritize the needs and well-being of employees, customers, and
+            communities, fostering growth and mutual respect.
           </p>
         </div>
-        <div className="rounded-xl bg-white p-6 text-center shadow-xl">
-          <div className="mx-auto flex h-16 w-16 -translate-y-12 transform items-center justify-center rounded-full shadow-lg bg-sky-500 shadow-sky-500/40">
-            <span className="text-white text-3xl">🌻</span>
+
+        {/* Value 3 */}
+        <div className="rounded-xl bg-[#611F69] p-8 text-center shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-[0_8px_24px_rgba(97,31,105,0.6)]">
+          <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-white shadow-lg shadow-white/40">
+            <span className="text-[#611F69] text-3xl">🔒</span> {/* Lock Icon for Integrity */}
           </div>
-          <h3 className="text-darken mb-3 text-xl font-medium lg:px-14">
+          <h3 className="text-xl font-semibold text-white mt-6">
             Integrity
           </h3>
-          <p className="px-4 text-gray-500">
-            We place a high value on honesty, transparency, and ethical behavior
-            maintaining a high level of trust with our employees, and other
-            stakeholders.
+          <p className="text-white mt-3">
+            Honesty, transparency, and ethical behavior are at the core of our
+            relationships with stakeholders.
           </p>
         </div>
-        <div className="rounded-xl bg-white p-6 text-center shadow-xl">
-          <div className="mx-auto flex h-16 w-16 -translate-y-12 transform items-center justify-center rounded-full shadow-lg bg-rose-500 shadow-rose-500/40">
-            <span className="text-white text-3xl">💧</span>
+
+        {/* Value 4 */}
+        <div className="rounded-xl bg-[#611F69] p-8 text-center shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-[0_8px_24px_rgba(97,31,105,0.6)]">
+          <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-white shadow-lg shadow-white/40">
+            <span className="text-[#611F69] text-3xl">✔️</span> {/* Check Icon for Accountability */}
           </div>
-          <h3 className="text-darken mb-3 text-xl font-medium lg:px-14">
+          <h3 className="text-xl font-semibold text-white mt-6">
             Accountability
           </h3>
-          <p className="px-4 text-gray-500">
-            We value taking responsibility for our actions and outcomes, and
-            holding ourselves and our employees accountable for our performance.
+          <p className="text-white mt-3">
+            Taking responsibility for actions and outcomes is fundamental to
+            achieving excellence in all we do.
           </p>
         </div>
-        <div className="rounded-xl  bg-white p-6 text-center shadow-xl">
-          <div className="mx-auto flex h-16 w-16 -translate-y-12 transform items-center justify-center rounded-full shadow-lg bg-rose-500 shadow-rose-500/40">
-            <span className="text-white text-3xl">💧</span>
+
+        {/* Value 5 */}
+        <div className="rounded-xl bg-[#611F69] p-8 text-center shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-[0_8px_24px_rgba(97,31,105,0.6)]">
+          <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-white shadow-lg shadow-white/40">
+            <span className="text-[#611F69] text-3xl">💡</span> {/* Light Bulb Icon for Innovation */}
           </div>
-          <h3 className="text-darken mb-3 text-xl font-medium lg:px-14">
+          <h3 className="text-xl font-semibold text-white mt-6">
             Collaboration
           </h3>
-          <p className="px-4 text-gray-500">
-            Collaboration fuels innovation and progress among us by bringing
-            together diverse backgrounds & skill sets toward a common goal
+          <p className="text-white mt-3">
+            Collaboration drives innovation and unites diverse talents toward
+            achieving shared goals.
           </p>
         </div>
       </div>
@@ -81,3 +103,4 @@ const Values = () => {
 };
 
 export default Values;
+
