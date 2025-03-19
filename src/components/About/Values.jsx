@@ -1,6 +1,7 @@
 import React from "react";
 
 const Values = () => {
+  
   return (
     <div className="h-full min-h-screen w-full bg-gray-800 pt-12 px-6">
       {/* Header Section */}
