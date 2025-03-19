@@ -3,12 +3,10 @@ import { Listbox, Transition } from '@headlessui/react';
 import { CheckIcon, ChevronDownIcon } from '@heroicons/react/20/solid';
 
 const classes = [
-  { name: '7th Grade' },
-  { name: '8th Grade' },
-  { name: '9th Grade' },
-  { name: '10th Grade' },
-  { name: '11th Grade' },
-  { name: '12th Grade' },
+  { name: 'C++ Programming Language' },
+  { name: 'Python Programming Language' },
+  { name: 'Java Programming Language' },
+ 
 ];
 
 const Dropdown = () => {
@@ -17,7 +15,7 @@ const Dropdown = () => {
   return (
     <div className="w-full">
       <Listbox value={selected} onChange={setSelected}>
-        <h3 className='text-lg text-lightgrey'>Select a Class Level</h3>
+        <h3 className='text-lg text-lightgrey'>Select a Language</h3>
         <div className="relative mt-1">
           <Listbox.Button className="relative w-full cursor-default rounded-lg bg-white text-xl py-2 pr-10 text-left focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
             <span className="block truncate text-xl font-semibold">{selected.name}</span>
