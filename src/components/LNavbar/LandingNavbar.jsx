@@ -2,19 +2,20 @@
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
+import { usePathname } from "next/navigation"; // Current route check karne ke liye
 import React, { useState, useEffect } from "react";
 import Signdialog from "./Signdialog";
 import Registerdialog from "./Registerdialog";
 import Contact from "./Contactus";
 import Image from "next/image";
 
-const navigation = [
-  { name: "Home", href: "#home", current: true },
-  { name: "Features", href: "#courses-section", current: false },
-  { name: "Our Team", href: "#mentors-section", current: false },
-  { name: "Testimonial", href: "#testimonial-section", current: false },
-  { name: "Join", href: "#join-section", current: false },
-  { name: "About ExamTech", href: "./Aboutus", current: false },
+const navigationLinks = [
+  { name: "Home", href: "/" },
+  { name: "Features", href: "/#courses-section" },
+  { name: "Our Team", href: "/#mentors-section" },
+  { name: "Testimonial", href: "/#testimonial-section" },
+  { name: "Join", href: "/#join-section" },
+  { name: "About ExamTech", href: "/Aboutus" },
 ];
 
 function classNames(...classes) {
@@ -23,11 +24,12 @@ function classNames(...classes) {
 
 const LandingNavbar = () => {
   const [showSignDialog, setShowSignDialog] = useState(true);
+  const pathname = usePathname(); // Current route ko track karne ke liye
 
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
-      setShowSignDialog(false); // Hide sign dialog if token exists
+      setShowSignDialog(false);
     }
   }, []);
 
@@ -39,25 +41,20 @@ const LandingNavbar = () => {
             <div className="relative flex h-20 items-center justify-between">
               <div className="flex flex-1 items-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
-                  {/* Mobile Logo */}
-                  <Image
+                  {/* <Image
                     className="block lg:hidden"
-                    src="/assets/logo/exam1.png"
+                    src="/assets/logo/graduation.png"
                     alt="Courses-Logo"
                     width={150}
                     height={100}
-                  />
-
-                  {/* Desktop Logo */}
+                  /> */}
                   <Image
                     className="hidden lg:block"
-                    src="/assets/logo/exam1.png"
+                    src="/assets/logo/graduation.jpeg"
                     alt="ExamTech-Logo"
-                    width={130}
-                    height={100}
+                    width={80}
+                    height={70}
                   />
-
-                  {/* SmartGrader Text */}
                   <div
                     className="hidden lg:block"
                     style={{
@@ -74,15 +71,14 @@ const LandingNavbar = () => {
                 {/* Navigation Links */}
                 <div className="hidden sm:ml-14 md:block mt-5">
                   <div className="flex space-x-4">
-                    {navigation.map((item) => (
+                    {navigationLinks.map((item) => (
                       <Link
                         key={item.name}
                         href={item.href}
                         className={classNames(
-                          item.current ? "text-purple" : "hover:text-purple",
+                          pathname === item.href ? "text-purple font-bold" : "hover:text-purple",
                           "px-3 py-2 text-15px font-medium space-links"
                         )}
-                        aria-current={item.current ? "page" : undefined}
                       >
                         {item.name}
                       </Link>
@@ -113,14 +109,14 @@ const LandingNavbar = () => {
           {/* Mobile Menu */}
           <Disclosure.Panel className="md:hidden">
             <div className="space-y-1 px-2 pt-2 pb-3 sm:px-3">
-              {navigation.map((item) => (
+              {navigationLinks.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
                   className={classNames(
+                    pathname === item.href ? "text-purple font-bold" : "",
                     "block px-3 py-2 rounded-md text-base font-medium"
                   )}
-                  aria-current={item.current ? "page" : undefined}
                 >
                   {item.name}
                 </Link>
