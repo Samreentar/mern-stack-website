@@ -5,9 +5,9 @@ import { Listbox, Transition } from '@headlessui/react';
 import { CheckIcon, ChevronDownIcon } from '@heroicons/react/20/solid';
 
 const functionalities = [
-  { name: 'Online Exam Paper Grading' },
-  { name: 'Physical Paper Grading with OCR' },
-  { name: 'Soft Form Grading' },
+  { name: 'Online Exams Paper Grading' },
+  { name: 'Offline Exams Grading with OCR' },
+ 
 ];
 
 const Dropdown = () => {
