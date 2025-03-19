@@ -1,4 +1,5 @@
 import React from "react";
+
 import { FaLightbulb, FaRobot, FaCog, FaGlobe } from "react-icons/fa";
 
 const Ourstory = () => {
