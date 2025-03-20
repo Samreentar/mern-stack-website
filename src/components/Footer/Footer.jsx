@@ -26,15 +26,11 @@ const Footer = () => {
       <div className="mx-auto max-w-2xl pt-64 pb-16 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
         <div className="mt-24 grid grid-cols-1 gap-y-10 gap-x-16 sm:grid-cols-2 lg:grid-cols-12 xl:gap-x-8">
           {/* COLUMN-1 */}
-          <img
-            className="mx-auto h-12 w-auto"
-            src="/assets/logo/exam1.png"
-            alt="Your Company"
-          />
+         
           <div className="col-span-4">
             <h3 className="text-white text-lg font-medium leading-9 mb-4 lg:mb-20">
               {" "}
-              ExamTech uses AI and OCR to streamline. <br /> exam grading in
+              SmartGrader uses AI and OCR to streamline. <br />Efficient exam grading in
               Pakistan{" "}
             </h3>
             <div className="flex gap-4">
@@ -122,10 +118,10 @@ const Footer = () => {
 
       <div className="pb-24 px-4">
         <h3 className="text-center text-offwhite">
-          @2023 - All Rights Reserved by{" "}
-          <Link href="https://adminmart.com/" target="_blank">
+          @2025 - All Rights Reserved by{" "}
+          <Link href="https://smartgrader.com/" target="_blank">
             {" "}
-            Adminmart.com
+            smartgrader.com
           </Link>
         </h3>
       </div>
