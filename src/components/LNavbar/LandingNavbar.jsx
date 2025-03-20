@@ -2,10 +2,9 @@
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
-import { usePathname } from "next/navigation"; // Current route check karne ke liye
+import { usePathname } from "next/navigation";
 import React, { useState, useEffect } from "react";
 import Signdialog from "./Signdialog";
-import Registerdialog from "./Registerdialog";
 import Contact from "./Contactus";
 import Image from "next/image";
 
@@ -24,7 +23,7 @@ function classNames(...classes) {
 
 const LandingNavbar = () => {
   const [showSignDialog, setShowSignDialog] = useState(true);
-  const pathname = usePathname(); // Current route ko track karne ke liye
+  const pathname = usePathname();
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -39,45 +38,35 @@ const LandingNavbar = () => {
         <>
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="relative flex h-20 items-center justify-between">
-              <div className="flex flex-1 items-center sm:items-stretch sm:justify-start">
-                <div className="flex flex-shrink-0 items-center">
-                  {/* <Image
-                    className="block lg:hidden"
-                    src="/assets/logo/graduation.png"
-                    alt="Courses-Logo"
-                    width={150}
-                    height={100}
-                  /> */}
+              <div className="flex flex-1 items-center sm:items-center sm:justify-start">
+                <div className="flex flex-shrink-0 items-center space-x-2">
                   <Image
                     className="hidden lg:block"
-                    src="/assets/logo/graduation.jpeg"
+                    src="/assets/logo/pic.png"
                     alt="ExamTech-Logo"
-                    width={80}
-                    height={70}
+                    width={65} // Logo ka size chhota kiya hai
+                    height={60}
                   />
                   <div
                     className="hidden lg:block"
                     style={{
-                      fontSize: "32px",
+                      fontSize: "24px",
                       fontWeight: "bold",
                       color: "#3D0158",
-                      marginTop: "10px",
                     }}
                   >
                     SmartGrader
                   </div>
                 </div>
-
-                {/* Navigation Links */}
-                <div className="hidden sm:ml-14 md:block mt-5">
-                  <div className="flex space-x-4">
+                <div className="hidden sm:ml-14 md:block">
+                  <div className="flex space-x-6">
                     {navigationLinks.map((item) => (
                       <Link
                         key={item.name}
                         href={item.href}
                         className={classNames(
                           pathname === item.href ? "text-purple font-bold" : "hover:text-purple",
-                          "px-3 py-2 text-15px font-medium space-links"
+                          "px-3 py-2 text-15px font-medium"
                         )}
                       >
                         {item.name}
@@ -88,12 +77,10 @@ const LandingNavbar = () => {
                 </div>
               </div>
 
-              {/* Sign In and Register buttons for Desktop */}
               <div className="hidden md:flex items-center space-x-8">
                 {showSignDialog && <Signdialog />}
               </div>
 
-              {/* Mobile Menu Button */}
               <div className="block md:hidden">
                 <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-black hover:text-white hover:bg-purple focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                   {open ? (
@@ -106,7 +93,6 @@ const LandingNavbar = () => {
             </div>
           </div>
 
-          {/* Mobile Menu */}
           <Disclosure.Panel className="md:hidden">
             <div className="space-y-1 px-2 pt-2 pb-3 sm:px-3">
               {navigationLinks.map((item) => (
@@ -122,7 +108,6 @@ const LandingNavbar = () => {
                 </Link>
               ))}
               <Contact />
-              {/* Sign In and Register buttons for Mobile */}
               <div className="px-3 py-2">
                 {showSignDialog && <Signdialog />}
               </div>
