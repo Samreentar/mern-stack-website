@@ -29,10 +29,11 @@ const Pricing: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Title Section */}
         <div className="text-center">
-          <h2 className="text-base text-indigo-600 font-semibold tracking-wide uppercase animate-pulse text-8xl animate-fadeIn">
-            Pricing
-          </h2>
-          <p className="mt-4 text-xl leading-7 font-extrabold tracking-tight text-gray-900 sm:text-2xl">
+        <h2 className="text-6xl text-indigo-600 font-semibold tracking-normal font-sans">
+  Pricing
+</h2>
+
+          <p className="mt-4 text-xl leading-7 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
             Choose your plan
           </p>
         </div>
