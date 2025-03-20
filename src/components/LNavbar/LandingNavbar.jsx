@@ -2,19 +2,19 @@
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React, { useState, useEffect } from "react";
 import Signdialog from "./Signdialog";
-import Registerdialog from "./Registerdialog";
 import Contact from "./Contactus";
 import Image from "next/image";
 
-const navigation = [
-  { name: "Home", href: "#home", current: true },
-  { name: "Features", href: "#courses-section", current: false },
-  { name: "Our Team", href: "#mentors-section", current: false },
-  { name: "Testimonial", href: "#testimonial-section", current: false },
-  { name: "Join", href: "#join-section", current: false },
-  { name: "About ExamTech", href: "./Aboutus", current: false },
+const navigationLinks = [
+  { name: "Home", href: "/" },
+  { name: "Features", href: "/#courses-section" },
+  { name: "Our Team", href: "/#mentors-section" },
+  { name: "Testimonial", href: "/#testimonial-section" },
+  { name: "Join", href: "/#join-section" },
+  { name: "About ExamTech", href: "/Aboutus" },
 ];
 
 function classNames(...classes) {
@@ -23,11 +23,12 @@ function classNames(...classes) {
 
 const LandingNavbar = () => {
   const [showSignDialog, setShowSignDialog] = useState(true);
+  const pathname = usePathname();
 
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
-      setShowSignDialog(false); // Hide sign dialog if token exists
+      setShowSignDialog(false);
     }
   }, []);
 
@@ -37,52 +38,36 @@ const LandingNavbar = () => {
         <>
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="relative flex h-20 items-center justify-between">
-              <div className="flex flex-1 items-center sm:items-stretch sm:justify-start">
-                <div className="flex flex-shrink-0 items-center">
-                  {/* Mobile Logo */}
-                  <Image
-                    className="block lg:hidden"
-                    src="/assets/logo/exam1.png"
-                    alt="Courses-Logo"
-                    width={150}
-                    height={100}
-                  />
-
-                  {/* Desktop Logo */}
+              <div className="flex flex-1 items-center sm:items-center sm:justify-start">
+                <div className="flex flex-shrink-0 items-center space-x-2">
                   <Image
                     className="hidden lg:block"
-                    src="/assets/logo/exam1.png"
+                    src="/assets/logo/pic.png"
                     alt="ExamTech-Logo"
-                    width={130}
-                    height={100}
+                    width={65} // Logo ka size chhota kiya hai
+                    height={60}
                   />
-
-                  {/* SmartGrader Text */}
                   <div
                     className="hidden lg:block"
                     style={{
-                      fontSize: "32px",
+                      fontSize: "24px",
                       fontWeight: "bold",
                       color: "#3D0158",
-                      marginTop: "10px",
                     }}
                   >
                     SmartGrader
                   </div>
                 </div>
-
-                {/* Navigation Links */}
-                <div className="hidden sm:ml-14 md:block mt-5">
-                  <div className="flex space-x-4">
-                    {navigation.map((item) => (
+                <div className="hidden sm:ml-14 md:block">
+                  <div className="flex space-x-6">
+                    {navigationLinks.map((item) => (
                       <Link
                         key={item.name}
                         href={item.href}
                         className={classNames(
-                          item.current ? "text-purple" : "hover:text-purple",
-                          "px-3 py-2 text-15px font-medium space-links"
+                          pathname === item.href ? "text-purple font-bold" : "hover:text-purple",
+                          "px-3 py-2 text-15px font-medium"
                         )}
-                        aria-current={item.current ? "page" : undefined}
                       >
                         {item.name}
                       </Link>
@@ -92,12 +77,10 @@ const LandingNavbar = () => {
                 </div>
               </div>
 
-              {/* Sign In and Register buttons for Desktop */}
               <div className="hidden md:flex items-center space-x-8">
                 {showSignDialog && <Signdialog />}
               </div>
 
-              {/* Mobile Menu Button */}
               <div className="block md:hidden">
                 <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-black hover:text-white hover:bg-purple focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                   {open ? (
@@ -110,23 +93,21 @@ const LandingNavbar = () => {
             </div>
           </div>
 
-          {/* Mobile Menu */}
           <Disclosure.Panel className="md:hidden">
             <div className="space-y-1 px-2 pt-2 pb-3 sm:px-3">
-              {navigation.map((item) => (
+              {navigationLinks.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
                   className={classNames(
+                    pathname === item.href ? "text-purple font-bold" : "",
                     "block px-3 py-2 rounded-md text-base font-medium"
                   )}
-                  aria-current={item.current ? "page" : undefined}
                 >
                   {item.name}
                 </Link>
               ))}
               <Contact />
-              {/* Sign In and Register buttons for Mobile */}
               <div className="px-3 py-2">
                 {showSignDialog && <Signdialog />}
               </div>
