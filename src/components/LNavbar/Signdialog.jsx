@@ -174,8 +174,8 @@ const SigninSignupModal = () => {
               <Dialog.Panel className="w-full max-w-md bg-white rounded-lg p-6 shadow-lg">
                 <div className="text-center">
                   <img
-                    className="mx-auto h-12"
-                    src="/assets/logo/exam1.png"
+                    className="mx-auto h-20"
+                    src="/assets/logo/pic.png"
                     alt="ExamTech"
                   />
                   <h2 className="mt-4 text-xl font-bold">
